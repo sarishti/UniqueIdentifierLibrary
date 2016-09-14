@@ -14,6 +14,10 @@
 		F95E01B91D882C1400CD4B6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F95E01B71D882C1400CD4B6E /* LaunchScreen.storyboard */; };
 		F95E01C41D882C1400CD4B6E /* UniqueIdentifierLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E01C31D882C1400CD4B6E /* UniqueIdentifierLibraryTests.swift */; };
 		F95E01CF1D882C1400CD4B6E /* UniqueIdentifierLibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E01CE1D882C1400CD4B6E /* UniqueIdentifierLibraryUITests.swift */; };
+		F95E01E31D8832FC00CD4B6E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F95E01E21D8832FC00CD4B6E /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F95E01E51D88365800CD4B6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F95E01E41D88365800CD4B6E /* Security.framework */; };
+		F9DBDB941D8911FB00F80FF1 /* UniqueIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBDB931D8911FB00F80FF1 /* UniqueIdentifier.swift */; };
+		F9DBDB9D1D8920A800F80FF1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F9DBDB9C1D8920A800F80FF1 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,12 @@
 		F95E01CA1D882C1400CD4B6E /* UniqueIdentifierLibraryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniqueIdentifierLibraryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95E01CE1D882C1400CD4B6E /* UniqueIdentifierLibraryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIdentifierLibraryUITests.swift; sourceTree = "<group>"; };
 		F95E01D01D882C1400CD4B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F95E01E11D8832EE00CD4B6E /* KeychainItemWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		F95E01E21D8832FC00CD4B6E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		F95E01E41D88365800CD4B6E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F9DBDB931D8911FB00F80FF1 /* UniqueIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniqueIdentifier.swift; sourceTree = "<group>"; };
+		F9DBDB951D89193800F80FF1 /* UniqueIdentifierLibrary-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UniqueIdentifierLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
+		F9DBDB9C1D8920A800F80FF1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F95E01E51D88365800CD4B6E /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +88,7 @@
 		F95E01A21D882C1400CD4B6E = {
 			isa = PBXGroup;
 			children = (
+				F9DBDB9C1D8920A800F80FF1 /* README.md */,
 				F95E01AD1D882C1400CD4B6E /* UniqueIdentifierLibrary */,
 				F95E01C21D882C1400CD4B6E /* UniqueIdentifierLibraryTests */,
 				F95E01CD1D882C1400CD4B6E /* UniqueIdentifierLibraryUITests */,
@@ -97,12 +109,15 @@
 		F95E01AD1D882C1400CD4B6E /* UniqueIdentifierLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				F95E01DC1D88318900CD4B6E /* KeyChainItemWrapper */,
 				F95E01AE1D882C1400CD4B6E /* AppDelegate.swift */,
 				F95E01B01D882C1400CD4B6E /* ViewController.swift */,
 				F95E01B21D882C1400CD4B6E /* Main.storyboard */,
 				F95E01B51D882C1400CD4B6E /* Assets.xcassets */,
 				F95E01B71D882C1400CD4B6E /* LaunchScreen.storyboard */,
 				F95E01BA1D882C1400CD4B6E /* Info.plist */,
+				F9DBDB951D89193800F80FF1 /* UniqueIdentifierLibrary-Bridging-Header.h */,
+				F95E01E61D8836AB00CD4B6E /* Frameworks */,
 			);
 			path = UniqueIdentifierLibrary;
 			sourceTree = "<group>";
@@ -123,6 +138,24 @@
 				F95E01D01D882C1400CD4B6E /* Info.plist */,
 			);
 			path = UniqueIdentifierLibraryUITests;
+			sourceTree = "<group>";
+		};
+		F95E01DC1D88318900CD4B6E /* KeyChainItemWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				F95E01E21D8832FC00CD4B6E /* KeychainItemWrapper.m */,
+				F95E01E11D8832EE00CD4B6E /* KeychainItemWrapper.h */,
+				F9DBDB931D8911FB00F80FF1 /* UniqueIdentifier.swift */,
+			);
+			path = KeyChainItemWrapper;
+			sourceTree = "<group>";
+		};
+		F95E01E61D8836AB00CD4B6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F95E01E41D88365800CD4B6E /* Security.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +291,9 @@
 			files = (
 				F95E01B11D882C1400CD4B6E /* ViewController.swift in Sources */,
 				F95E01AF1D882C1400CD4B6E /* AppDelegate.swift in Sources */,
+				F9DBDB9D1D8920A800F80FF1 /* README.md in Sources */,
+				F95E01E31D8832FC00CD4B6E /* KeychainItemWrapper.m in Sources */,
+				F9DBDB941D8911FB00F80FF1 /* UniqueIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,10 +435,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UniqueIdentifierLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.netsol.UniqueIdentifierLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UniqueIdentifierLibrary/UniqueIdentifierLibrary-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -410,10 +449,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UniqueIdentifierLibrary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.netsol.UniqueIdentifierLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UniqueIdentifierLibrary/UniqueIdentifierLibrary-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -482,6 +523,7 @@
 				F95E01D51D882C1400CD4B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F95E01D61D882C1400CD4B6E /* Build configuration list for PBXNativeTarget "UniqueIdentifierLibraryTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +532,7 @@
 				F95E01D81D882C1400CD4B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F95E01D91D882C1400CD4B6E /* Build configuration list for PBXNativeTarget "UniqueIdentifierLibraryUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +541,7 @@
 				F95E01DB1D882C1400CD4B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

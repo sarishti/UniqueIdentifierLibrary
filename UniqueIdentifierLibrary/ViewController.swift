@@ -10,16 +10,32 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+	// Outlet
+	@IBOutlet weak var lblUUIDValue: UILabel!
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
+		// Do any additional setup after loading the view, typically from a nib.
+	}
+
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
+
+	@IBAction func getUUIDFromKeyChain(sender: AnyObject) {
+		/**
+         getUniqueIdentifier will get valueof uuid from keychain
+         */
+		lblUUIDValue.text = getUniqueIdentifier()
+	}
+
+	@IBAction func setUUIDInKeychain(sender: AnyObject) {
+		/**
+         *  If there is no value in key chain then set the value of uuid in keychain
+         */
+		setUniqueIdentifier()
+	}
 
 }
-
