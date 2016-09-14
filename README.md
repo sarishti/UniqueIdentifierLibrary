@@ -17,11 +17,11 @@ This control provides the Unique key identifier.
 
 ## Implementation
 
-** Get the Unique identifier **
+**Get the Unique identifier**
 
 getUniqueIdentifier()
 
-** Set the Unique Identifier **
+**Set the Unique Identifier**
 
 setUniqueIdentifier()
 
@@ -32,7 +32,7 @@ setUniqueIdentifier()
 
 -> In bridging header import keychain file 
 
-#import "KeychainItemWrapper.h"  
+// #import "KeychainItemWrapper.h"  
 
 
 
